@@ -1,38 +1,40 @@
 import React from 'react';
-import {
-  ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  theme,
-} from '@chakra-ui/react';
+import { ChakraProvider, Box, theme, Grid, GridItem } from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
+
+//components
+import Logo from './components/logo';
+import Printer from './components/printer';
+import Body from './components/body';
+import Side from './components/side';
+import SideButton from './components/sideButton';
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
-          </VStack>
+      <ColorModeSwitcher />
+      <Box textAlign="center" fontSize="xl" paddingLeft={5} paddingRight={5}>
+        <Grid
+          h="100vh"
+          templateRows="repeat(12, 1fr)"
+          templateColumns="repeat(12, 1fr)"
+          gap={2}
+        >
+          <GridItem colSpan={2} rowSpan={2}>
+            <Logo />
+          </GridItem>
+          <GridItem colSpan={10} rowSpan={2}>
+            <Printer />
+          </GridItem>
+          <GridItem colSpan={8} rowSpan={10}>
+            <Body />
+          </GridItem>
+          <GridItem colSpan={4} rowSpan={9}>
+            <Side />
+          </GridItem>
+          <GridItem colSpan={4} rowSpan={1}>
+            <SideButton />
+          </GridItem>
         </Grid>
       </Box>
     </ChakraProvider>
