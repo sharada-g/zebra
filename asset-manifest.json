@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/zebra/static/js/main.c02db04e.js",
+    "static/js/377.167fc23c.chunk.js": "/zebra/static/js/377.167fc23c.chunk.js",
+    "index.html": "/zebra/index.html",
+    "main.c02db04e.js.map": "/zebra/static/js/main.c02db04e.js.map",
+    "377.167fc23c.chunk.js.map": "/zebra/static/js/377.167fc23c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.c02db04e.js"
+  ]
+}
